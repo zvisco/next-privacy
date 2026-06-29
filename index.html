@@ -54,11 +54,13 @@
     background: color-mix(in srgb, var(--bg) 78%, transparent);
     border-bottom: 1px solid var(--border); }
   .nav-in { display: flex; align-items: center; justify-content: space-between; height: 62px; }
-  .brand { display: flex; align-items: center; gap: 11px; font-weight: 700; font-size: 17px; color: var(--text); }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 22px; color: var(--text); }
   .brand:hover { text-decoration: none; }
-  .mark { width: 30px; height: 30px; border-radius: 8px; background: var(--grad);
-    display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 16px;
-    box-shadow: 0 3px 10px rgba(91,108,255,.4); }
+  /* The app icon itself (rounded corners baked into the PNG) — matches the Mac app's Dock icon. */
+  .mark-img { width: 40px; height: 40px; border-radius: 9px; display: block; flex: 0 0 auto;
+    box-shadow: 0 3px 10px rgba(91,108,255,.28); }
+  .mark-lg { width: 76px; height: 76px; border-radius: 17px; margin: 0 auto 22px;
+    box-shadow: var(--shadow-sm); }
   .nav-links { display: flex; align-items: center; gap: 8px; }
   .nav-links a.txt { color: var(--muted); font-weight: 600; font-size: 14.5px; padding: 8px 12px; border-radius: 9px; }
   .nav-links a.txt:hover { color: var(--text); background: var(--tint); text-decoration: none; }
@@ -83,8 +85,8 @@
   .hero { text-align: center; padding: 76px 0 0; }
   .eyebrow { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .02em;
     color: var(--accent-ink); background: var(--tint); padding: 6px 14px; border-radius: 999px; }
-  h1 { font-size: clamp(36px, 6vw, 60px); line-height: 1.05; letter-spacing: -.03em;
-    margin: 22px auto 0; max-width: 16ch; font-weight: 800; }
+  h1 { font-size: clamp(36px, 6vw, 60px); line-height: 1.08; letter-spacing: -.03em;
+    margin: 22px auto 0; font-weight: 800; }
   h1 .g { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .sub { font-size: clamp(17px, 2.4vw, 20px); color: var(--muted); max-width: 56ch; margin: 20px auto 0; }
   .cta { display: flex; gap: 14px; justify-content: center; align-items: center; flex-wrap: wrap; margin: 30px 0 14px; }
@@ -134,7 +136,6 @@
 
   /* Final CTA */
   .final { text-align: center; }
-  .final .mark { width: 60px; height: 60px; border-radius: 16px; font-size: 30px; margin: 0 auto 22px; }
 
   footer { border-top: 1px solid var(--border); padding: 34px 0 50px; color: var(--muted); font-size: 14px; }
   .foot-in { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
@@ -155,7 +156,7 @@
 
 <header class="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="#top"><span class="mark">N</span> Next</a>
+    <a class="brand" href="#top"><img class="mark-img" src="assets/icon.png" alt="Next app icon"> Next</a>
     <nav class="nav-links">
       <a class="txt" href="#features">Features</a>
       <a class="txt" href="privacy/">Privacy</a>
@@ -171,7 +172,7 @@
   <section class="hero">
     <div class="wrap">
       <span class="eyebrow">Calendar + to-dos for macOS</span>
-      <h1>Your whole day, <span class="g">in one calm place.</span></h1>
+      <h1>Your whole day,<br><span class="g">in one calm place.</span></h1>
       <p class="sub">Next is a fast, private calendar and to-do app for your Mac. Type plans in plain
         English, see events and tasks together, and keep all your data on your device.</p>
       <div class="cta">
@@ -314,7 +315,7 @@
   <!-- ── Final CTA ────────────────────────────────── -->
   <section class="final band">
     <div class="wrap">
-      <div class="mark">N</div>
+      <img class="mark-img mark-lg" src="assets/icon.png" alt="Next app icon">
       <h2>Bring your day together</h2>
       <p class="sub">Next is a one-time purchase on the Mac App Store. No subscription, no catch.</p>
       <div class="cta">
